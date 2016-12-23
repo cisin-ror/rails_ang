@@ -1,0 +1,32 @@
+todoApp.config(function ($routeProvider) {
+    $routeProvider
+    .when('/' , {
+        templateUrl : '/assets/home.html',
+        resolve:{
+            loadProfile: checkLogin,
+        }
+        
+    })
+    .when('/projects/new' , {
+        templateUrl : 'assets/new_project.html',
+        controller  : 'productCtrl',
+        resolve:{
+            loadProfile: checkLogin,
+        }
+    }).when('/projects' , {
+        templateUrl : 'assets/project_index.html',
+        controller  : 'projectCtrl',
+        resolve: {
+            loadProfile: checkRouting,
+        }
+    })
+})
+
+var checkRouting=function($q, $rootScope, $location, $http, Auth,$window) {
+
+}
+
+
+var checkLogin=function($sessionStorage){
+    
+}

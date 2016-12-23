@@ -1,0 +1,16 @@
+<div ng-init="init()">
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="project in projects">
+      <th scope="row">{{$index}}</th>
+      <td ng-bind="project.name"></td>
+    </tr>
+  </tbody>
+</table>
+<div>
